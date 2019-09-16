@@ -51,6 +51,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
+# Board
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := trinket
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1560
 TARGET_SCREEN_WIDTH := 720
@@ -101,6 +105,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    BluetoothResCommon
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -115,6 +123,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += \
     qcom.fmradio
 
 # Fingerprint
@@ -141,7 +152,6 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common \
     ims_ext_common.xml
 
 PRODUCT_COPY_FILES += \
@@ -163,9 +173,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
-# OTA
-PRODUCT_PACKAGES += \
-    Updater
+#PRODUCT_PACKAGES += \
+    Updates
+
+# Placeholder
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/placeholder:system/etc/placeholder
+>>>>>>> c95d497... laurel_sprout: Create system copy of ims-ext-common and add to classpath
 
 # Power
 PRODUCT_PACKAGES += \
@@ -178,12 +192,14 @@ PRODUCT_SOONG_NAMESPACES += \
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext \
+    ims-ext-common_system \
     qti-telephony-utils \
     qti_telephony_utils.xml \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml
 
 PRODUCT_BOOT_JARS += \
+    ims-ext-common_system \
     telephony-ext
 
 # WiFi Display

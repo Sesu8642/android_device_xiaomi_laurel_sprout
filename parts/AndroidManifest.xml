@@ -56,5 +56,10 @@
                        android:value="com.android.settings.category.ia.display" />
         </activity>
 
+        <service
+            android:name=".fod.FodService"
+            android:permission="FodService">
+        </service>
+
     </application>
 </manifest>

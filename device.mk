@@ -180,7 +180,6 @@ PRODUCT_PACKAGES += \
 # Placeholder
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/placeholder:system/etc/placeholder
->>>>>>> c95d497... laurel_sprout: Create system copy of ims-ext-common and add to classpath
 
 # Power
 PRODUCT_PACKAGES += \
